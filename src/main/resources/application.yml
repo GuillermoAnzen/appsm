@@ -1,0 +1,26 @@
+variables:
+  eureka:
+    host: localhost
+    #host: hostEureka
+    port: 8761
+info:
+  component: Domains and Applications microservice (nearshore-appsms)
+server:
+  port: 7702
+spring:
+  config:
+    name: nearshore-appsms
+  application:
+    name: nearshore-appsms
+
+logging:
+  level:
+    com.banamex.nearshore: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
